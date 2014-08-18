@@ -1,0 +1,47 @@
+[user]
+  name = Brian Fenton
+  email = brian.fenton@thismoment.com
+
+[core]
+  editor = edit -w
+  excludesfile = /Users/brian.fenton/dotfiles/.gitignore
+  autocrlf = input
+  safecrlf = true
+  quotepath = false
+
+[color]
+  ui = auto
+
+[github]
+  user = fentie
+  email = fentie@gmail.com
+#this causes problems when using git pull, since that's a git fetch + git merge. too much log clutter
+#[branch "master"]
+#	mergeoptions = --no-ff
+
+[alias]
+  ci = commit
+  co = checkout
+  st = status
+  br = branch
+  clone = clone --recursive
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  standup = log --pretty=oneline --author=\"Brian Fenton\"
+
+[fetch]
+  recurseSubmodules = true
+
+[credential]
+  helper = osxkeychain
+
+[diff]
+  algorithm = patience
+
+[push]
+  default = simple
+
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
