@@ -1,6 +1,6 @@
 [user]
   name = Brian Fenton
-  email = brian.fenton@thismoment.com
+  email = brian.fenton@bigcommerce.com
 
 [core]
   editor = edit -w
@@ -45,3 +45,5 @@
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
+[rerere]
+	enabled = true

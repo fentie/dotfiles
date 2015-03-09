@@ -4,10 +4,6 @@ if [ -f ~/.bashrc ]; then
 fi
 #source ~/dotfiles/git-completion.bash
 
-source /ampd/tools/_env
-export DYLD_LIBRARY_PATH=/ampd/apps/lib
-
-
 #Colors
 export TERM=xterm-color
 export CLICOLOR=1
@@ -60,23 +56,11 @@ function delete-merged-branches() {
   git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 }
 
-#svn aliases
-alias ss="svn status"
-alias si="svn info"
-alias scon="svn status | grep -p '^(?=.{0,6}C)'"
-#function sbranch() {
-#    local ticket=$1 #(echo "$1" | sed 's/^\(.\{2\}\)/&-/')
-#    echo "$ticket"
-#    svn copy $SVN_URL/trunk $SVN_URL/branches/$1 -m "Creating dev branch. refs #$ticket"
-#    svn co $SVN_URL/branches/$1 $1
-#    cd /Volumes/workspace/$1
-#    ~/Documents/code/phpstorm-template-project/clone-project-settings.sh $1
-#}
 
 #vagrant aliases
-#alias vs="vagrant status"
-#alias vssh="vagrant ssh"
-#alias vh="vagrant halt"
-#alias vsuspend="vagrant suspend"
-#alias vres="vagrant resume"
-#alias vu="vagrant up"
+alias vs="vagrant status"
+alias vssh="vagrant ssh"
+alias vh="vagrant halt"
+alias vsuspend="vagrant suspend"
+alias vres="vagrant resume"
+alias vu="vagrant up"
