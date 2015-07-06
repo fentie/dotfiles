@@ -40,10 +40,14 @@
   algorithm = patience
 
 [push]
-  default = simple
+	default = nothing
 
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 [rerere]
 	enabled = true
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true

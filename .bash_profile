@@ -3,6 +3,7 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 #source ~/dotfiles/git-completion.bash
+source ~/.profile
 
 #Colors
 export TERM=xterm-color
@@ -64,3 +65,5 @@ alias vh="vagrant halt"
 alias vsuspend="vagrant suspend"
 alias vres="vagrant resume"
 alias vu="vagrant up"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

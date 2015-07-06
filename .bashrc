@@ -17,7 +17,6 @@ alias ....='cd ../../..'
 alias xclip="xclip -selection c"
 
 # make sure ssh-add is available with current user's RSA key
-#if [ $(ssh-add -l | grep "no") -eq 0 ]; then
 if ! ssh-add -l >/dev/null 2>&1; then
     ssh-add ~/.ssh/id_rsa
 fi
@@ -33,3 +32,10 @@ fi
 
 export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 export LESS=" -RN "
+
+# set up NVM
+export NVM_DIR=/Users/brian.fenton/.nvm
+source /usr/local/opt/nvm/nvm.sh
+nvm use default
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
