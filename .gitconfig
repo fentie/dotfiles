@@ -5,6 +5,7 @@
 [core]
   editor = edit -w
   excludesfile = /Users/brian.fenton/dotfiles/.gitignore
+  attributesFile = /Users/brian.fenton/dotfiles/.gitattributes
   autocrlf = input
   safecrlf = true
   quotepath = false
@@ -40,14 +41,14 @@
   algorithm = patience
 
 [push]
-	default = nothing
+  default = nothing
 
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 [rerere]
-	enabled = true
+  enabled = true
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
