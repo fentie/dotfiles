@@ -1,0 +1,26 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias xclip="xclip -selection c"
+
+#git aliases
+alias gs="git status"
+alias ga="git add"
+alias gap="git add -p"
+alias gc="git commit"
+alias gcm="git commit -m"
+#alias go="git checkout"
+alias gb="git branch"
+alias gd="git diff"
+
+#vagrant aliases
+alias vs="vagrant status"
+alias vssh="vagrant ssh"
+alias vh="vagrant halt"
+alias vsuspend="vagrant suspend"
+alias vres="vagrant resume"
+alias vu="vagrant up"
+
+alias ls="ls -F"
+alias ll="ls -alF"

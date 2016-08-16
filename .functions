@@ -1,0 +1,24 @@
+# Pull updates from all git repos below your CWD. single level only (fix)
+function gupdate() {
+    for i in */.git;
+        do ( cd "${i/\/.*/}"; git pull --ff-only);
+    done
+}
+
+# http://stevenharman.net/git-clean-delete-already-merged-branches
+function delete-merged-branches() {
+  git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+}
+
+# stash, switch to master, sync w/origin, switch back, rebase, and stash pop
+function update-git() {
+  local BRANCH=`git symbolic-ref --short HEAD`
+  echo $BRANCH
+  git stash
+  git checkout master
+  git pull
+  git push origin master
+  git checkout $BRANCH
+  git rebase master
+  git stash pop
+}
