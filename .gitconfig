@@ -6,6 +6,7 @@
   autocrlf = input
   safecrlf = true
   quotepath = false
+  hooksPath = /Users/brianfenton/dotfiles/git_hooks
 
 [color]
   ui = auto
