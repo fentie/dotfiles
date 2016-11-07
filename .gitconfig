@@ -7,6 +7,9 @@
   quotepath = false
   hooksPath = /Users/brianfenton/dotfiles/git_hooks
 
+[rerere]
+  enabled = true
+
 [color]
   ui = auto
 
@@ -32,20 +35,33 @@
 [fetch]
   recurseSubmodules = true
 
+[push]
+  default = nothing
+
+[url "git@github.com:"]
+  insteadOf = gh:
+
 [credential]
   helper = osxkeychain
 
 [diff]
   algorithm = patience
+  tool = diffmerge
+[diff "exif"]
+  textconv = exiftool
 
-[push]
-  default = nothing
+[difftool "diffmerge"]
+  cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[merge]
+  tool = diffmerge
+
+[mergetool "diffmerge"]
+  trustExitCode = true
+  cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
 
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
-[rerere]
-  enabled = true
 [filter "hawser"]
   clean = git hawser clean %f
   smudge = git hawser smudge %f
