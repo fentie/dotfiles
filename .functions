@@ -7,7 +7,7 @@ function gupdate() {
 
 # http://stevenharman.net/git-clean-delete-already-merged-branches
 function delete-merged-branches() {
-  git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+  git branch --merged master | grep -v "\master" | xargs -n 1 git branch -d
 }
 
 # stash, switch to master, sync w/origin, switch back, rebase, and stash pop
